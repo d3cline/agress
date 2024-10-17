@@ -1,3 +1,4 @@
+![Agress](logo.png)
 ## Warning
 
 This codebase is in early development. 
