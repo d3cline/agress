@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Lookup - My E-commerce Store</title>
+  <meta name="description" content="Lookup your order details using your order number.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="http://yourdomain.com/order-lookup.html">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Order Lookup - My E-commerce Store">
+  <meta property="og:description" content="Lookup your order details using your order number.">
+  <meta property="og:url" content="http://yourdomain.com/order-lookup.html">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS -->
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-base-100">
+
+  <!-- Navbar -->
+  <div class="navbar bg-base-200">
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl" href="index.html">My Store</a>
+    </div>
+    <div class="flex-none">
+      <a href="cart.html" class="btn btn-ghost">
+        Cart
+        <div class="badge badge-secondary ml-1" id="cart-count">0</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container mx-auto p-4">
+    <h1 class="text-4xl font-bold mb-6 text-center">Order Lookup</h1>
+    <div id="order-lookup-content" class="max-w-md mx-auto">
+      <p class="mb-4 text-center">Enter your order number to view your order details.</p>
+      <form id="order-lookup-form" class="space-y-4">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Order Number</span>
+          </label>
+          <input type="text" id="order-number" class="input input-bordered" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-full mt-4">Lookup Order</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer p-4 bg-base-200 text-base-content footer-center">
+    <div>
+      <p>&copy; 2024 My E-commerce Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/cart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCount();
+
+      const orderLookupForm = document.getElementById('order-lookup-form');
+      orderLookupForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Get the order number from the input
+        const orderNumber = document.getElementById('order-number').value;
+
+        // Placeholder function for order lookup
+        lookupOrder(orderNumber);
+      });
+    });
+
+    // Placeholder function for order lookup
+    function lookupOrder(orderNumber) {
+      // TODO: Implement order lookup logic
+      alert(`Looking up order: ${orderNumber}. Order lookup feature is under development.`);
+    }
+  </script>
+</body>
+</html>
